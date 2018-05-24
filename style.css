@@ -1,5 +1,43 @@
+@font-face {
+    font-family: 'time-burner'; /*a name to be used later*/
+    src: url("./font/timeburnerbold-webfont.ttf"); /*URL to font*/
+}
+
+body {
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    position: relative;
+}
+
+#navbar {
+    background-color:rgb(0,35,100);
+    z-index: 3;
+    font-family: "time-burner";
+}
+
+#navbar:after {
+    position:absolute;
+    content: "";
+    background: inherit;
+    display:block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: top right;
+    transform: skewY(-2deg);
+    z-index: -1;
+    box-shadow: -1px 5px 4px #555;
+}
+
+#navbar .navbar-brand {
+    position: absolute;
+    top: 3px;
+    font-size: 48px;
+    
+}
+
 #banner {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(./images/banner.jpg) no-repeat;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./images/cafeMoving.gif) no-repeat;
     background-size: cover;
     width: 100%;
     height: 54vw;
@@ -7,44 +45,142 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "time-burner";
 }
-
+#banner h1 {
+    font-family: "time-burner";
+}
 #banner h2{
     color: white;
     border: 0;
     display: block;
+    font-family: "time-burner";
+}
+#banner h3 {
+    margin: 10px 0;
+}
+
+@media (max-width: 720px) {
+    #banner h1{
+        font-size: 0;
+    }
+    #banner h2{
+        font-size: 24px;
+    }
+}
+@media (max-width: 970px) {
+    #navbar .navbar-brand {
+        font-size: 36px;
+    }
 }
 
 #banner > * {
     color: white;
 }
 
-hr {
-    border: 2px solid white;
-    width: 50px;
+#icons img {
+    max-width: 60px;
+    max-height: 60px;
+    padding: 10px;
 }
 
 #portfolio {
     text-align: center;
+    padding: 10% 0;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+}
+#portfolio:before {
+    position:absolute;
+    content: "";
+    background: inherit;
+    display:block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: skewY(-2deg);
+    z-index: -1;
+}
+#portfolio:after {
+    position:absolute;
+    content: "";
+    background: inherit;
+    display:block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: skewY(2deg);
+    z-index: -1;
 }
 
 h2 {
     display: inline-block;
     margin: 20px;
     padding:10px;
-    border-bottom: 1px solid black;
+    font-family: 'time-burner';
 }
 
-#portfolio img {
-    width: 100%;
-    margin-bottom: 20px;
+#portfolio h2{
+    font-size: 0;
+    margin: 0;
 }
+#portfolio .title {
+    margin: 0 auto;
+    max-width: 500px;
+}
+#portfolio .box {
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0;
+    box-sizing: content-box;
+    
+}
+#portfolio .container img {
+    width: 100%;
+    padding: 0;
+    background-color: rgba(240, 95, 64, 0.6);
+    box-sizing: border-box; 
+}
+#portfolio .box:hover {
+    top: -8px;
+    box-shadow: 0 5px 4px #666;
+}
+
+#portfolio .box .overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: rgba(240, 95, 64, 0.5);
+    color: white;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+#portfolio .box .overlay:hover {
+    opacity: 1;
+}
+
 
 #about {
     text-align: center;
+    padding: 10% 0;
+    color: white;
+    background-color: #f05f40;
 }
 
-#about img {
+#about .message img {
     border-radius: 50%;
     float: left;
     max-width: 300px;
@@ -59,8 +195,19 @@ h2 {
     clear: both;
 }
 
+#album-slider {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10% 0;
+}
+#album-slider img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
 #contact {
     text-align: center;
+    font-family: "time-burner";
 }
 
 #contact button {
@@ -69,7 +216,11 @@ h2 {
     font-size: 32px;
     margin: 20px 0;
 }
+#contact a:hover{
+    color: #f05f40;
+}
 
 #contact a {
     color: #333;
+    text-decoration: none;
 }
