@@ -32,8 +32,7 @@ body {
 #navbar .navbar-brand {
     position: absolute;
     top: 3px;
-    font-size: 48px;
-    
+    font-size: 48px;   
 }
 
 #banner {
@@ -170,6 +169,12 @@ h2 {
 }
 #portfolio .box .overlay:hover {
     opacity: 1;
+}
+#portfolio small {
+    color: #777;
+}
+#portfolio .card-body {
+    text-align: left;
 }
 
 
